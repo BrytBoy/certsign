@@ -46,7 +46,7 @@ jobs:
           
         run: |
           echo "TAGS is ${{env.TAGS}}"
-          cosign sign --yes --key env://COSIGN_PRIVATE_KEY ${TAGS}
+          echo "" | cosign sign --yes --key env://COSIGN_PRIVATE_KEY ${TAGS}
           
       - name: Verify signature
         
