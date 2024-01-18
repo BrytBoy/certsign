@@ -48,7 +48,7 @@ jobs:
           
         run: |
           echo "TAGS is ${{env.TAGS}}"
-          cosign sign --yes --key env://COSIGN_PRIVATE_KEY  ${{env.TAGS}}
+          cosign sign --yes --key env://COSIGN_PRIVATE_KEY  ghcr.io/${{ github.repository }}/test.zip:latest
           
       - name: Verify signature
         
