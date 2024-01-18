@@ -37,6 +37,7 @@ jobs:
       - name: Store TAGS from output file
         run: |
           TAG=$(cat tagname.txt)
+          TAG=${TAG//@sha256/}
           echo "TAGS=$TAG" >> $GITHUB_ENV
            
       - name: Sign blob with cosign
