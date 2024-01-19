@@ -45,6 +45,7 @@ jobs:
           
         run: |
           echo "TAGS is ${{env.TAGS}}"
+          cat "~./docker/config.json"
           echo "" | cosign sign --yes --key env://COSIGN_PRIVATE_KEY ${TAGS}
           
       - name: Verify signature
